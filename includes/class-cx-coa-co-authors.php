@@ -85,7 +85,7 @@ class CX_COA_Co_Authors {
         $co_authors = self::get_co_authors( $post->ID );
         
         if ( empty( $co_authors ) ) {
-            return $text;
+            return $content;
         }
         
         $span_data  = array();
@@ -102,8 +102,8 @@ class CX_COA_Co_Authors {
         }
 
         // add it to a span tag with data attribute.
-        $coauthors_html = '<span class="cx-coa-authors-data" data-cx_coa_co_authors=\'' . json_encode( $span_data ) . '\'></span>';
-		return $coauthors_html . $content;
+        $co_authors_html = '<span class="cx-coa-authors-data" data-cx_coa_co_authors=\'' . json_encode( $span_data ) . '\'></span>';
+		return $co_authors_html . $content;
 	}
 
 }

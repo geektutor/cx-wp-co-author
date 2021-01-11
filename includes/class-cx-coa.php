@@ -133,7 +133,7 @@ final class CX_COA {
 	 *
 	 * @since 1.0.0
 	 */
-	public function load_scripts() {
+	public static function load_scripts() {
 
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 		wp_enqueue_script( 'cx-coa-co-authors-js', self::plugin_url() . '/assets/js/co-authors' . $suffix . '.js', array( 'jquery' ), CX_COA_PLUGIN_VERSION );

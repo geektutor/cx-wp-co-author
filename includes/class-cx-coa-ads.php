@@ -49,7 +49,7 @@ class CX_COA_Ads {
    	    $post_types = array( 'post', 'page' );
         
 		// Only continue when $post is valid and its a supported post type.
-       	if ( ! $post || ! in_array( $post->post_type, $post_types, true ) ) {
+       	if ( ! $post || ! is_single() || ! in_array( $post->post_type, $post_types, true ) ) {
 			return $content;
 		}
 
@@ -68,16 +68,16 @@ class CX_COA_Ads {
 			return $content;
 		}
 
+        // After what paragraph to add ad content. Note. values in quote are "x to the last paragraph".
+		$ad_sections   = array( 4, 10, '3' );
+		$section_count = 0; // Use this to know the next paragraph to add ad content :).
+
 		// Is our paragraph less than 10?
 		if ( $p_count < 10 ) {
 			$ad_sections = array( 5 );
 		}
 
 		$ads_content = '<a class="cx-coa-adspace" href="' . esc_attr( $ad_link ) . '" style="margin:50px 0;display:block;">' . $ad_link . '</a>';
-
-		// After what paragraph to add ad content. Note. values in quote are "x to the last paragraph".
-		$ad_sections   = array( 4, 10, '3' );
-		$section_count = 0; // Use this to know the next paragraph to add ad content :).
 		
 		for ( $i = 0; $i < count( $paragraphs ); $i++ ) {
 			$p_num              = $i + 1;
