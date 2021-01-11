@@ -1,0 +1,13 @@
+{
+    "name" : "geektutor/cx-wp-co-author",
+    "description": "Geektutor WP Post Multiple Author with Ads",
+    "require": {
+        "php": ">=5.6",
+        "squizlabs/php_codesniffer": "^3.4.5",
+        "wp-coding-standards/wpcs": "^2.2"
+      },
+    "require-dev": {
+        "automattic/vipwpcs": "^2.2",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
+    }
+}

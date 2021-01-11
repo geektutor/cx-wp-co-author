@@ -1,0 +1,45 @@
+{
+  "title": "geektutor WP Post Co-Author",
+  "name": "cx-wp-co-author",
+  "domain": "cx-coa",
+  "version": "1.0.0",
+  "description": "GeekTutor WP Post Multiple Author with Ads",
+  "main": "Gruntfile.js",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geektutor/cx-wp-co-author"
+  },
+  "bugs": {
+    "url": "https://github.com/geektutor/cx-wp-co-author"
+  },
+  "author": "geektutor",
+  "devDependencies": {
+    "@wordpress/scripts": "^12.1.1",
+    "grunt": "^1.3.0",
+    "grunt-contrib-clean": "~2.0.0",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-uglify": "~5.0.0",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-wp-i18n": "~1.0.3",
+    "grunt-wp-readme-to-markdown": "~2.0.1",
+    "load-grunt-tasks": "~5.1.0"
+  },
+  "dependencies": {
+    "@wordpress/components": "^10.0.6",
+    "@wordpress/data": "^4.22.3",
+    "@wordpress/edit-post": "^3.21.7",
+    "@wordpress/i18n": "^3.14.0",
+    "@wordpress/icons": "^2.4.0",
+    "@wordpress/plugins": "^2.20.3",
+    "jshint-stylish": "^2.2.1",
+    "npm-check-updates": "^8.0.3"
+  },
+  "scripts": {
+    "compress-zip": "php wp-plugin-deploy-helper.php --plugin_name=cx-wp-co-author --ignore_file_path=.git,.wordpress-org,node_modules,vendor,.vscode,.sh --delete_files_in_zip=wp-plugin-deploy-helper.php,package-lock.json,composer.lock,.eslintrc.json,.distignore",
+    "deploy": "npm run compress-zip",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  }
+}
