@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 		  build: {
 			  files: [{
 				  expand: true, // Enable dynamic expansion.
-				  src: ['js/*.js', '!js/*.min.js'], // Actual pattern(s) to match.
+				  src: ['assets/js/*.js', '!assets/js/*.min.js'], // Actual pattern(s) to match.
 				  ext: '.min.js', // Dest filepaths will have this extension.
 			  }, ]
 		  }
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 		  options: {
 			  reporter: require("jshint-stylish")
 		  },
-		  all: ["js/*.js", "!js/*.min.js"]
+		  all: ["assets/js/*.js", "!assets/js/*.min.js"]
 	  },
   
 	  clean: {

@@ -73,7 +73,7 @@ class CX_COA_Ads {
 			$ad_sections = array( 5 );
 		}
 
-		$ads_content = '<iframe class="cx-coa-adspace" src="' . esc_attr( $ad_link ) . '" width="100%" height="400px"></iframe>';
+		$ads_content = '<a class="cx-coa-adspace" href="' . esc_attr( $ad_link ) . '" style="margin:50px 0;display:block;">' . $ad_link . '</a>';
 
 		// After what paragraph to add ad content. Note. values in quote are "x to the last paragraph".
 		$ad_sections   = array( 4, 10, '3' );

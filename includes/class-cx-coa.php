@@ -54,6 +54,9 @@ final class CX_COA {
 	    // Add Block Editor compatibility.
         add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'enqueue_assets' ) );
 
+		// Enqueue required js and css.
+		add_filter( 'wp_enqueue_scripts', array( __CLASS__, 'load_scripts' ) );
+
     }
 
     /**
@@ -125,6 +128,18 @@ final class CX_COA {
     }
 
 
+	/**
+	 * Load Script.
+	 *
+	 * @since 1.0.0
+	 */
+	public function load_scripts() {
+
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+		wp_enqueue_script( 'cx-coa-co-authors-js', self::plugin_url() . '/assets/js/co-authors' . $suffix . '.js', array( 'jquery' ), CX_COA_PLUGIN_VERSION );
+
+	}
+
 	/*-----------------------------------------------------------------------------------*/
 	/* Block Editor Functions */
 	/*-----------------------------------------------------------------------------------*/
@@ -141,26 +156,3 @@ final class CX_COA {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
