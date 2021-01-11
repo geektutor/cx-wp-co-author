@@ -103,7 +103,7 @@ final class CX_COA {
 
         // Admin side.
         if ( self::is_request( 'admin' ) ) {
-			include_once CX_COA_ABSPATH . 'includes/admin/meta/class-cx-coa-post-meta.php';
+			include_once CX_COA_ABSPATH . 'includes/admin/meta-boxes/class-cx-coa-post-meta.php';
 		}
     }
      /**
